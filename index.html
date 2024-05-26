@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Store | Login & Registration</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #d9e1e1;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            transition: 0.5s;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar {
+            width: 100%;
+            background: crimson;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .navdiv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo a {
+            font-size: 30px;
+            font-weight: 600;
+            color: beige;
+        }
+        .navbar ul {
+            display: flex;
+        }
+        .navbar li {
+            list-style: none;
+        }
+        .navbar li a {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+        .navbar button {
+            background-color: black;
+            margin-left: 50px;
+            border-radius: 10px;
+            padding: 10px;
+            width: 90px;
+            border: none;
+        }
+        .navbar button a {
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .form-box {
+            background: #fff;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .form-box header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: crimson;
+        }
+        .form-box .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .form-box .input-box input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 40px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .form-box .input-box i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 20px;
+        }
+        .form-box .submit {
+            background: crimson;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .form-box .submit:hover {
+            background: darkred;
+        }
+        .form-box .two-forms {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-box .two-forms .input-box {
+            width: 48%;
+        }
+        .form-box .two-col {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .form-box .two-col .one {
+            display: flex;
+            align-items: center;
+        }
+        .form-box .two-col .one input {
+            margin-right: 10px;
+        }
+        .form-box .two-col .two a {
+            color: crimson;
+        }
+        .form-box .bottom {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-box .bottom span {
+            font-size: 14px;
+        }
+        .form-box .bottom span a {
+            color: crimson;
+        }
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar li a, .navbar button {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            .form-box .two-forms {
+                flex-direction: column;
+            }
+            .form-box .two-forms .input-box {
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .navdiv {
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo a {
+                font-size: 24px;
+            }
+            .navbar li a, .navbar button {
+                font-size: 16px;
+            }
+            .form-box {
+                padding: 20px;
+            }
+            .form-box header {
+                font-size: 20px;
+            }
+            .form-box .input-box input {
+                padding-left: 35px;
+            }
+            .form-box .input-box i {
+                font-size: 18px;
+            }
+            .form-box .submit {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="#">Cloud Store</a></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <button><a href="logIn.html">Log In</a></button>
+            </ul>
+        </div>
+    </nav>
+    <div class="form-box">
+        <div class="register-container" id="register">
+            <header>Sign Up</header>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Firstname">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Lastname">
+                    <i class="bx bx-user"></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Email">
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="Password">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Register">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>
+            </div>
+            <div class="bottom">
+                <span>Have an account? <a href="logIn.html" onclick="login()">Login</a></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function login() {
+            // Add login functionality here
+        }
+    </script>
+</body>
+</html>
